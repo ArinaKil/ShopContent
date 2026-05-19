@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShopContent"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinHeight="450" MinWidth="800" FontFamily="Centry Gotic" Icon="/Images/ic-shop.png">
     <Grid>
-
+        <Frame x:Name="frame" NavigationUIVisibility="Hidden" Margin="5,55,5,5" Background="#FFFAFAFA"/>
+        <Grid Height="50" VerticalAlignment="top" Background="White">
+            <Grid.Effect>
+                <DropShadowEffect Direction="270" BlurRadius="5" ShadowDepth="2" Opacity="0.5"/>
+            </Grid.Effect>
+            <Label Content="Вещи для дома" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="15pt"/>
+            <Image Width="30" Height="30" Margin="10" VerticalAlignment="top" HorizontalAlignment="left" Source="/Images/ic-shop.png" MouseDown="OpenIndex"/>
+        </Grid>
     </Grid>
 </Window>

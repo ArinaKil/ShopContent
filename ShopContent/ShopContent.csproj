@@ -8,4 +8,11 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Classes\" />
+    <Folder Include="Context\" />
+    <Folder Include="Modell\" />
+    <Folder Include="ViewModell\" />
+  </ItemGroup>
+
 </Project>
