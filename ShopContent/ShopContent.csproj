@@ -9,10 +9,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\ic-item.png" />
+    <None Remove="Images\ic-shop.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Classes\" />
     <Folder Include="Context\" />
     <Folder Include="Modell\" />
     <Folder Include="ViewModell\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\ic-item.png" />
+    <Resource Include="Images\ic-shop.png" />
   </ItemGroup>
 
 </Project>
