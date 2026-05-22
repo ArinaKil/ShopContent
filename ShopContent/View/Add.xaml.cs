@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ShopContent.Context;
 
 namespace ShopContent.View
 {
@@ -20,7 +21,7 @@ namespace ShopContent.View
     /// </summary>
     public partial class Add : Page
     {
-        public Add()
+        public Add(ItemsContext item)
         {
             InitializeComponent();
         }

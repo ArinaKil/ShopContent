@@ -87,7 +87,7 @@ namespace ShopContent.Context
             {
                 return new RelayCommand(obj =>
                 {
-                    MainWindow.init.frame.Navigate(new View.Add());
+                    MainWindow.init.frame.Navigate(new View.Add(this));
                 });
             }
         }

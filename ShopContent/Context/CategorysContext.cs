@@ -12,9 +12,9 @@ namespace ShopContent.Context
 {
     public class CategorysContext : Categorys
     {
-        public static ObservableCollection<Categorys> AllCategorys()
+        public static ObservableCollection<CategorysContext> AllCategorys()
         {
-            ObservableCollection<Categorys> allCategorys = new ObservableCollection<Categorys>();
+            ObservableCollection<CategorysContext> allCategorys = new ObservableCollection<CategorysContext>();
 
             SqlConnection connection = Connection.OpenConnection();
             SqlDataReader dataCategorys = Connection.Query("SELECT * FROM [dbo].[Categorys]", connection);
