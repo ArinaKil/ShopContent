@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ShopContent.Context;
+using ShopContent.ViewModell;
 
 namespace ShopContent.View
 {
@@ -21,9 +22,14 @@ namespace ShopContent.View
     /// </summary>
     public partial class Add : Page
     {
-        public Add(ItemsContext item)
+        public Add(object context)
         {
             InitializeComponent();
+            DataContext = new
+            {
+                item = context,
+                categorys = new VMCategorys()
+            };
         }
     }
 }

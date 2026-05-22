@@ -6,9 +6,48 @@
       xmlns:local="clr-namespace:ShopContent.View"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Add">
+      Title="Add" Margin="10" FontFamily="Century Gothic">
 
-    <Grid>
-        
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF4FC318"/>
+            <Setter Property="BorderBrush" Value="#FF4FC318"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="white">
+        <Grid.Effect>
+            <DropShadowEffect Direction="270" BlurRadius="5" ShadowDepth="2" Opacity="0.5"/>
+        </Grid.Effect>
+
+        <Image Width="50" Height="50" Source="/Images/ic-item.png" VerticalAlignment="top" HorizontalAlignment="Left" Margin="10"/>
+        <Grid Margin="65,0,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Наименование:" VerticalAlignment="top" Margin="10,10,10,0"/>
+            <TextBox Text="{Binding item.Name}" Height="25" VerticalAlignment="top" Margin="10,36,10,0" VerticalContentAlignment="Center"/>
+            <Label Content="Стоимость:" VerticalAlignment="top" Margin="10,10,10,0" Grid.Column="1"/>
+            <TextBox Text="{Binding item.Price}" Height="25" VerticalAlignment="top" Margin="10,36,10,0" VerticalContentAlignment="Center" Grid.Column="1"/>
+            <Label Content="Категория:" VerticalAlignment="top" Margin="10,67,10,0" Grid.ColumnSpan="2"/>
+            <ComboBox Text="{Binding item.cbCategory}" 
+                      ItemsSource="{Binding categorys.Categorys}"
+                      DisplayMemberPath="Name"
+                      SelectedValue="{Binding item.Category.Id}"
+                      SelectedValuePath="Id"
+                      Height="25" VerticalAlignment="top" Margin="10,93,10,0" VerticalContentAlignment="Center" Grid.ColumnSpan="2">
+
+            </ComboBox>
+            <Label Content="Описание:" VerticalAlignment="top" Margin="10,123,10,0" Grid.ColumnSpan="2"/>
+            <TextBox Text="{Binding item.Descriprion}" VerticalAlignment="Top" Height="260" Margin="10,150,10,0" VerticalContentAlignment="Center" Grid.ColumnSpan="2"/>
+
+            <Button Content="Сохранить" Width="100" Height="25" Margin="0,0,10,10" VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right" Grid.Column="1" Command="{Binding item.OnSave}">
+                <Button.Effect>
+                    <DropShadowEffect Direction="270" BlurRadius="5" ShadowDepth="2" Opacity="0.5"/>
+                </Button.Effect>
+            </Button>
+        </Grid>
     </Grid>
 </Page>
